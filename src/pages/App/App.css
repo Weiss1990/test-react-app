@@ -1,0 +1,30 @@
+.App {
+    height: 100%;
+}
+
+.app-header {
+    height: 50px;
+    background: #FFBF00;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.content {
+    margin: auto;
+    text-align: center;
+    width: 968px;
+    height: calc(100% - 100px);
+    overflow-y: auto;
+}
+
+.app-footer {
+    height: 50px;
+    background: #090974;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}

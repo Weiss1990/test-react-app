@@ -1,0 +1,19 @@
+.view-toggler {
+    margin: 50px 2.5% 50px 20px;
+    text-align: right;
+}
+
+.view-toggler button.active {
+    background: #FFBF00;
+    color: #1B1BB3;
+    font-size: 16px;
+}
+
+.view-toggler button.left {
+    border-radius: 5px 0 0 5px;
+    border-right: 1px solid #7373D9;
+}
+
+.view-toggler button.right {
+    border-radius: 0 5px 5px 0;
+}

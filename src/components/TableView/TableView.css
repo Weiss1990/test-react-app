@@ -1,0 +1,22 @@
+.table-view {
+    width: 97.5%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.table-view thead {
+    background: #BF9B30;
+}
+
+.table-view th, .table-view td {
+    padding: 10px 20px;
+}
+
+.table-view a {
+    color: #313186;
+    text-decoration: none;
+}
+
+.table-view tbody {
+    background: #FFCF40;
+}

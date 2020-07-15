@@ -1,0 +1,14 @@
+.categories ul li{
+    display: inline-block;
+    margin: 10px 20px;
+    list-style: none;
+}
+
+.categories ul li a {
+    color: #1B1BB3;
+    text-decoration: none;
+}
+
+.active {
+    font-weight: bold;
+}

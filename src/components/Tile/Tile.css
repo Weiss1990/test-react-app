@@ -1,0 +1,34 @@
+.tile {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    height: 150px;
+    margin: 0 2.5% 50px;
+    background: #BF9B30;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.tile h3 {
+    font-size: 14px;
+}
+
+.tile p {
+    font-size: 12px;
+}
+
+.tile button {
+    position: absolute;
+    bottom: 15px;
+    transform: translate(-50%);
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.tile button a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+}
