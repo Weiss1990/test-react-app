@@ -9,6 +9,10 @@ class TableView extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        console.log(this.props);
+    }
+
     render() {
         return (
             <table className="table-view">
@@ -25,7 +29,7 @@ class TableView extends React.Component {
                             <td>
                                 <Link to={
                                     {
-                                        pathname: `/product/${product.category}/${product.id}`,
+                                        pathname: `/product/${this.props.category}/${product.productName}`,
                                         productDetails: product
                                     }
                                 }>
@@ -43,6 +47,7 @@ class TableView extends React.Component {
 }
 
 TableView.propTypes = {
+    category: PropTypes.string,
     products: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number,

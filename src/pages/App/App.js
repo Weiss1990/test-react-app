@@ -30,7 +30,7 @@ class App extends React.Component {
                         <Switch>
                             <Route path='/welcome' component={Welcome} />
                             <Route path='/products/:category' component={Products} />
-                            <Route path='/product/:category/:productId' component={Product} />
+                            <Route path='/product/:category/:productName' component={Product} />
                             <Route path='/cart-summary' component={CartSummary} />
                             <Redirect from="/" to="/welcome" />
                         </Switch>

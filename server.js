@@ -116,6 +116,7 @@ app.all('*',function(req,res,next)
 });
 
 app.get('/categories', (req, res) => {
+
     res.send(JSON.stringify(categories));
 });
 
@@ -140,6 +141,17 @@ app.post('/getproductbyid', (req, res) => {
     if (req.body && req.body.id) {
         const product = productList.find((product) => {
             return product.id === +req.body.id;
+        })
+
+        res.send(product);
+    }
+});
+
+app.post('/getproductbyname', (req, res) => {
+
+    if (req.body && req.body.name) {
+        const product = productList.find((product) => {
+            return product.productName === req.body.name;
         })
 
         res.send(product);

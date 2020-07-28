@@ -32,6 +32,18 @@ class ProductsService {
 
         return await response.json();
     }
+
+    async getProductByName(name) {
+        const response = await fetch(`${serverUrl}/getproductbyname`, {
+            method: 'POST',
+            headers: headersJSON,
+            body: JSON.stringify({
+                name
+            })
+        });
+
+        return await response.json();
+    }
 }
 
 export default new ProductsService();

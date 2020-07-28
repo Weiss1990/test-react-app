@@ -14,7 +14,7 @@ class Product extends React.Component {
     }
 
     componentDidMount() {
-        this.initProductDetails();
+        this.initProductDetails().then();
     }
 
     async initProductDetails() {
@@ -37,7 +37,7 @@ class Product extends React.Component {
     }
 
     async getProductDetailsFromServer() {
-        const data = await ProductsService.getProductById(this.props.match.params.productId);
+        const data = await ProductsService.getProductByName(this.props.match.params.productName);
         this.setState({
             product: data
         });

@@ -1,15 +1,12 @@
 import React from 'react';
 import CategoriesService from "../../services/CategoriesService";
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
     NavLink,
-    Redirect,
     withRouter
 } from 'react-router-dom';
 import './Categories.css';
+import {connect} from "react-redux";
+import {loadCategoriesList, selectCategory} from "../../actions/categoriesActions";
 
 class Categories extends React.Component {
 
@@ -29,7 +26,14 @@ class Categories extends React.Component {
         const categories = await CategoriesService.getCategoriesList();
         this.setState({
             categories
-        })
+        });
+        this.props.callLoadCategoriesListAction(categories);
+
+        const activeCategoryByURL = categories.find((category) => {
+            return `/products/${category.name}` === this.props.location.pathname;
+        });
+
+        this.props.callSelectCategoryAction(activeCategoryByURL);
     }
 
     render() {
@@ -38,10 +42,10 @@ class Categories extends React.Component {
                 <ul>
                     {this.state.categories.map((category, index) => {
                         return (
-                            <li key={index}>
+                            <li key={index} onClick={() => {this.props.callSelectCategoryAction(category)}}>
                                 <NavLink activeClassName='active' to={
                                     {
-                                        pathname: `/products/${category.id}`
+                                        pathname: `/products/${category.name}`
                                     }
                                 }>
                                     {category.name}
@@ -55,4 +59,9 @@ class Categories extends React.Component {
     }
 }
 
-export default withRouter(Categories);
+const mapDispatchToProps = {
+    callLoadCategoriesListAction: loadCategoriesList,
+    callSelectCategoryAction: selectCategory
+}
+
+export default connect(null, mapDispatchToProps)(withRouter(Categories));

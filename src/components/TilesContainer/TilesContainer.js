@@ -14,7 +14,7 @@ class TilesContainer extends React.Component {
         return (
             <div className="tiles-container">
                 {this.props.products.map((product, index) => {
-                    return (<Tile product={product} link={`/product/${product.category}/${product.id}`} key={index} />)
+                    return (<Tile product={product} link={`/product/${this.props.category}/${product.productName}`} key={index} />)
                 })}
             </div>
         )
@@ -22,6 +22,7 @@ class TilesContainer extends React.Component {
 }
 
 TilesContainer.propTypes = {
+    category: PropTypes.string,
     products: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number,
